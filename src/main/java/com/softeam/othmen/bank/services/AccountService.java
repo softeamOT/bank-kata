@@ -8,4 +8,6 @@ public interface AccountService {
 	
 	public void deposit(Account account, BigDecimal amount);
 
+	public void withdrawal(Account account, BigDecimal bigDecimal);
+
 }

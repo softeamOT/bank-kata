@@ -23,12 +23,20 @@ public class AccountServiceTest {
 		accountService = AccountServiceImpl.getInstance();
 	}
 
-		
+	
 	@Test
 	public void MakeDepositTest() {
 		Client client = new Client();
 		Account account = new Account(client, new BigDecimal(100), new ArrayList<Operation>());
 		accountService.deposit(account, new BigDecimal(50));
+		Assert.assertEquals(new BigDecimal(150), account.getBalance());
+	}
+	
+	@Test
+	public void MakeWithdrawalTest() {
+		Client client = new Client();
+		Account account = new Account(client, new BigDecimal(200), new ArrayList<Operation>());
+		accountService.withdrawal(account, new BigDecimal(50));
 		Assert.assertEquals(new BigDecimal(150), account.getBalance());
 	}
 
