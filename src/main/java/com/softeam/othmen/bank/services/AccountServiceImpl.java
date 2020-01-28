@@ -20,8 +20,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	public void deposit(Account account, BigDecimal amount) {
-		// TODO Auto-generated method stub
-		
+		account.setBalance(account.getBalance().add(amount));
 	}
 
 }
