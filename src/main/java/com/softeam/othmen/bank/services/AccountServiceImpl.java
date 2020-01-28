@@ -23,9 +23,8 @@ public class AccountServiceImpl implements AccountService {
 		account.setBalance(account.getBalance().add(amount));
 	}
 
-	public void withdrawal(Account account, BigDecimal bigDecimal) {
-		// TODO Auto-generated method stub
-		
+	public void withdrawal(Account account, BigDecimal amount) {
+		account.setBalance(account.getBalance().subtract(amount));		
 	}
 
 }
