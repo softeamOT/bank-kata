@@ -1,6 +1,7 @@
 package com.softeam.othmen.bank.services;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import com.softeam.othmen.bank.vo.Account;
 
@@ -19,11 +20,11 @@ public class AccountServiceImpl implements AccountService {
 		return INSTANCE;
 	}
 
-	public void deposit(Account account, BigDecimal amount) {
+	public void deposit(Account account, BigDecimal amount, LocalDateTime time) {
 		account.setBalance(account.getBalance().add(amount));
 	}
 
-	public void withdrawal(Account account, BigDecimal amount) {
+	public void withdrawal(Account account, BigDecimal amount, LocalDateTime time) {
 		account.setBalance(account.getBalance().subtract(amount));		
 	}
 
